@@ -1,0 +1,90 @@
+﻿@model PsyCoderEntity.Orders
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Orders</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderCreateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderCreateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderPayTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderPayTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyerIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyerIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderSource)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderSource)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

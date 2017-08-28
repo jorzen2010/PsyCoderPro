@@ -1,0 +1,15 @@
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\PsyCoderEntity.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\PsyCoderEntity.pdb
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\obj\Release\PsyCoderEntity.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\obj\Release\PsyCoderEntity.pdb
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\obj\Release\PsyCoderEntity.csprojResolveAssemblyReference.cache
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\LitJson.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\NPOI.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\NPOI.OOXML.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\NPOI.OpenXml4Net.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\NPOI.OpenXmlFormats.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\RestSharp.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\ThoughtWorks.QRCode.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\NPOI.xml
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderEntity\bin\Release\RestSharp.xml

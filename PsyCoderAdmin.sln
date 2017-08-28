@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsyCoderAdmin", "PsyCoderAdmin\PsyCoderAdmin.csproj", "{DC170B55-CBEB-44FC-AE4C-A9F254EDBADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsyCoderEntity", "PsyCoderEntity\PsyCoderEntity.csproj", "{17670E37-C3FE-4647-B7C2-1778AD924EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsyCoderDal", "PsyCoderDal\PsyCoderDal.csproj", "{7B1B1BC0-1642-45EF-8FE4-53B9593C3D79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsyCoderServices", "PsyCoderServices\PsyCoderServices.csproj", "{BB9CE1B3-0DDE-41DD-9BF6-45B573119816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsyCoderCommon", "PsyCoderCommon\PsyCoderCommon.csproj", "{42609FA3-7A66-4C92-835A-808B57BFA531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsyCoderWechat", "PsyCoderWechat\PsyCoderWechat.csproj", "{06CDCAF9-DC19-4622-80FF-C0A69142E175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC170B55-CBEB-44FC-AE4C-A9F254EDBADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC170B55-CBEB-44FC-AE4C-A9F254EDBADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC170B55-CBEB-44FC-AE4C-A9F254EDBADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC170B55-CBEB-44FC-AE4C-A9F254EDBADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17670E37-C3FE-4647-B7C2-1778AD924EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17670E37-C3FE-4647-B7C2-1778AD924EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17670E37-C3FE-4647-B7C2-1778AD924EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17670E37-C3FE-4647-B7C2-1778AD924EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1B1BC0-1642-45EF-8FE4-53B9593C3D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1B1BC0-1642-45EF-8FE4-53B9593C3D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1B1BC0-1642-45EF-8FE4-53B9593C3D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1B1BC0-1642-45EF-8FE4-53B9593C3D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9CE1B3-0DDE-41DD-9BF6-45B573119816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9CE1B3-0DDE-41DD-9BF6-45B573119816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9CE1B3-0DDE-41DD-9BF6-45B573119816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9CE1B3-0DDE-41DD-9BF6-45B573119816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42609FA3-7A66-4C92-835A-808B57BFA531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42609FA3-7A66-4C92-835A-808B57BFA531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42609FA3-7A66-4C92-835A-808B57BFA531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42609FA3-7A66-4C92-835A-808B57BFA531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CDCAF9-DC19-4622-80FF-C0A69142E175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CDCAF9-DC19-4622-80FF-C0A69142E175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CDCAF9-DC19-4622-80FF-C0A69142E175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CDCAF9-DC19-4622-80FF-C0A69142E175}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

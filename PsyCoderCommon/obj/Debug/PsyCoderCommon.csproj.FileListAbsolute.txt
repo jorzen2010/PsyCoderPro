@@ -1,0 +1,14 @@
+E:\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\PsyCoderCommon.dll
+E:\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\PsyCoderCommon.pdb
+E:\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\ChnCharInfo.dll
+E:\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+E:\2017\PsyCoderProVIP\PsyCoderCommon\obj\Debug\PsyCoderCommon.csprojResolveAssemblyReference.cache
+E:\2017\PsyCoderProVIP\PsyCoderCommon\obj\Debug\PsyCoderCommon.dll
+E:\2017\PsyCoderProVIP\PsyCoderCommon\obj\Debug\PsyCoderCommon.pdb
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\PsyCoderCommon.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\PsyCoderCommon.pdb
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\ChnCharInfo.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\obj\Debug\PsyCoderCommon.csprojResolveAssemblyReference.cache
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\obj\Debug\PsyCoderCommon.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\obj\Debug\PsyCoderCommon.pdb

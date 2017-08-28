@@ -1,0 +1,231 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+timestamp：@ViewBag.timestamp  <br/>
+nonceStr：@ViewBag.nonceStr  <br />
+appid：@ViewBag.appid  <br />
+signature：@ViewBag.signature  <br />
+jsapi_ticket：@ViewBag.jsapi_ticket <br />
+currentUrl：@ViewBag.currentUrl <br />
+
+
+<h3 id="menu-share">分享接口</h3>
+<span class="desc">获取“分享到朋友圈”按钮点击状态及自定义分享内容接口</span>
+<button class="btn btn-success" id="onMenuShareTimeline">onMenuShareTimeline</button><br />
+<span class="desc">获取“分享给朋友”按钮点击状态及自定义分享内容接口</span>
+<button class="btn btn-success" id="onMenuShareAppMessage">onMenuShareAppMessage</button><br />
+<span class="desc">获取“分享到QQ”按钮点击状态及自定义分享内容接口</span>
+<button class="btn btn-success" id="onMenuShareQQ">onMenuShareQQ</button><br />
+<span class="desc">获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口</span>
+<button class="btn btn-success" id="onMenuShareWeibo">onMenuShareWeibo</button><br />
+<span class="desc">获取“分享到QZone”按钮点击状态及自定义分享内容接口</span>
+<button class="btn btn-success" id="onMenuShareQZone">onMenuShareQZone</button><br />
+
+
+<h3 id="menu-scan">微信扫一扫</h3>
+<span class="desc">调起微信扫一扫接口</span>
+<button class="btn btn-primary" id="scanQRCode0">scanQRCode(微信处理结果)</button><br />
+<button class="btn btn-primary" id="scanQRCode1">scanQRCode(直接返回结果)</button><br />
+
+<h3>微信支付</h3>
+<button class="btn btn-primary" id="chooseWXPay">chooseWXPay</button>
+
+@section Scripts {
+   
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+    <script type="text/javascript">
+        wx.config({
+            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: '@ViewBag.appid', // 必填，公众号的唯一标识
+            timestamp: @ViewBag.timestamp,// 必填，生成签名的时间戳
+            nonceStr: '@ViewBag.nonceStr', // 必填，生成签名的随机串
+            signature: '@ViewBag.signature',// 必填，签名，见附录1
+            jsApiList: ['checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'onMenuShareQZone',
+             'scanQRCode','chooseWXPay',] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.error(function(res){
+            alert('配置信息失败:'+res.errMsg);
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+
+        });
+
+        wx.ready(function(){
+           
+            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+        });
+
+        // 2. 分享接口
+        // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+        document.querySelector('#onMenuShareAppMessage').onclick = function () {
+            wx.onMenuShareAppMessage({
+                title: '互联网之子',
+                desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                link: 'http://movie.douban.com/subject/25785114/',
+                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+                trigger: function (res) {
+                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                    alert('用户点击发送给朋友');
+                },
+                success: function (res) {
+                    alert('已分享');
+                },
+                cancel: function (res) {
+                    alert('已取消');
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+            alert('已注册获取“发送给朋友”状态事件');
+        };
+
+        // 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+        document.querySelector('#onMenuShareTimeline').onclick = function () {
+            wx.onMenuShareTimeline({
+                title: '互联网之子',
+                link: 'http://movie.douban.com/subject/25785114/',
+                imgUrl: 'http://demo.open.weixin.qq.com/jssdk/images/p2166127561.jpg',
+                trigger: function (res) {
+                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                    alert('用户点击分享到朋友圈');
+                },
+                success: function (res) {
+                    alert('已分享');
+                },
+                cancel: function (res) {
+                    alert('已取消');
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+            alert('已注册获取“分享到朋友圈”状态事件');
+        };
+
+        // 2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
+        document.querySelector('#onMenuShareQQ').onclick = function () {
+            wx.onMenuShareQQ({
+                title: '互联网之子',
+                desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                link: 'http://movie.douban.com/subject/25785114/',
+                imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
+                trigger: function (res) {
+                    alert('用户点击分享到QQ');
+                },
+                complete: function (res) {
+                    alert(JSON.stringify(res));
+                },
+                success: function (res) {
+                    alert('已分享');
+                },
+                cancel: function (res) {
+                    alert('已取消');
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+            alert('已注册获取“分享到 QQ”状态事件');
+        };
+  
+        // 2.4 监听“分享到微博”按钮点击、自定义分享内容及分享结果接口
+        document.querySelector('#onMenuShareWeibo').onclick = function () {
+            wx.onMenuShareWeibo({
+                title: '互联网之子',
+                desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                link: 'http://movie.douban.com/subject/25785114/',
+                imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
+                trigger: function (res) {
+                    alert('用户点击分享到微博');
+                },
+                complete: function (res) {
+                    alert(JSON.stringify(res));
+                },
+                success: function (res) {
+                    alert('已分享');
+                },
+                cancel: function (res) {
+                    alert('已取消');
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+            alert('已注册获取“分享到微博”状态事件');
+        };
+
+        // 2.5 监听“分享到QZone”按钮点击、自定义分享内容及分享接口
+        document.querySelector('#onMenuShareQZone').onclick = function () {
+            wx.onMenuShareQZone({
+                title: '互联网之子',
+                desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
+                link: 'http://movie.douban.com/subject/25785114/',
+                imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
+                trigger: function (res) {
+                    alert('用户点击分享到QZone');
+                },
+                complete: function (res) {
+                    alert(JSON.stringify(res));
+                },
+                success: function (res) {
+                    alert('已分享');
+                },
+                cancel: function (res) {
+                    alert('已取消');
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+            alert('已注册获取“分享到QZone”状态事件');
+        };
+
+
+        // 9 微信原生接口
+        // 9.1.1 扫描二维码并返回结果
+        document.querySelector('#scanQRCode0').onclick = function () {
+            wx.scanQRCode();
+        };
+        // 9.1.2 扫描二维码并返回结果
+        document.querySelector('#scanQRCode1').onclick = function () {
+            wx.scanQRCode({
+                needResult: 1,
+                desc: 'scanQRCode desc',
+                success: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+        };
+
+        // 10 微信支付接口
+        // 10.1 发起一个支付请求
+        document.querySelector('#chooseWXPay').onclick = function () {
+            // 注意：此 Demo 使用 2.7 版本支付接口实现，建议使用此接口时参考微信支付相关最新文档。
+            wx.chooseWXPay({
+                timestamp: @ViewBag.timestamp,
+                nonceStr: '@ViewBag.nonceStr',
+                package: 'addition=action_id%3dgaby1234%26limit_pay%3d&bank_type=WX&body=innertest&fee_type=1&input_charset=GBK&notify_url=http%3A%2F%2F120.204.206.246%2Fcgi-bin%2Fmmsupport-bin%2Fnotifypay&out_trade_no=1414723227818375338&partner=1900000109&spbill_create_ip=127.0.0.1&total_fee=1&sign=432B647FE95C7BF73BCD177CEECBEF8D',
+                signType: 'SHA1', // 注意：新版支付接口使用 MD5 加密
+                paySign: 'bd5b1933cda6e9548862944836a9b52e8c9a2b69'
+            });
+        };
+
+
+        var shareData = {
+            title: '微信JS-SDK Demo',
+            desc: '微信JS-SDK,帮助第三方为用户提供更优质的移动web服务',
+            link: 'http://demo.open.weixin.qq.com/jssdk/',
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRt8Qia4lv7k3M9J1SKqKCImxJCt7j9rHYicKDI45jRPBxdzdyREWnk0ia0N5TMnMfth7SdxtzMvVgXg/0'
+        };
+        wx.onMenuShareAppMessage(shareData);
+        wx.onMenuShareTimeline(shareData);
+    </script>
+}
+
+

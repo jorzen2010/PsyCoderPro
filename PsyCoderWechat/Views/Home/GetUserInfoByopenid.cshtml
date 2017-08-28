@@ -1,0 +1,15 @@
+﻿@model PsyCoderEntity.WechatEntity.WechatUserInfo
+
+
+<h4><a href="/Home/GetUserInfoByopenid?openid=oChqYt1b0t1U2_b_U9ag1JQyrebM">用户1</a> </h4>
+<h4><a href="/Home/GetUserInfoByopenid?openid=oChqYt13RL8dBi0zKHo0kao-aSHo">用户2</a> </h4>
+
+<h3>获取用户信息</h3>
+
+openid:@Model.openid  <br/>
+unionid:@Model.unionid <br/> 
+sex:@Model.sex <br /> 
+地点：@Model.country @Model.province @Model.city <br /> 
+昵称：@Model.nickname <br /> 
+头像：<img src="@Model.headimgurl" height="100" width="100" /> <br /> 
+是否关注： @Model.subscribe

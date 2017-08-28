@@ -1,0 +1,120 @@
+﻿@model StaticPagedList<PsyCoderEntity.Level>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "等级管理";
+}
+
+@section Topcss {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+    <link href="~/Resource/plugins/bootstrap-validator/css/bootstrapValidator.css" rel="stylesheet" type="text/css" />
+    <link href="~/Resource/plugins/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/iCheck/square/green.css" rel="stylesheet" type="text/css" />
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        @ViewBag.Title
+        <small>
+            @ViewBag.SmallTitle
+        </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li><a href="#">@ViewBag.Title</a></li>
+        <li class="active">@ViewBag.SmallTitle</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <div class="pull-left">
+                        <div class="btn-group">
+                            <a href="@Url.Action("Create", "Level")" class="btn btn-success"><i class="fa fa-plus"></i> 新增积分</a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1">
+                                    序号
+                                </th>
+                                <th class="col-sm-2">
+                                    等级名称
+                                </th>
+                                <th class="col-sm-2">
+                                    等级积分
+                                </th>
+                                <th class="col-sm-4">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LevelId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LevelName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LevelValue)
+                                    </td>
+                                    <td>
+                                        @Html.AntiForgeryToken()
+                                        <button class="btn btn-danger btn-xs" type="button" onclick="delconfirm('@item.LevelId','/Level/DeleteConfirmed/','/Level/Index')"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+                                        <a href="@Url.Action("Edit", "Level", new { id = item.LevelId })" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span> 编辑</a>
+                                    </td>
+
+                                </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <ul class="pull-right">
+                        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+    new PagedListRenderOptions
+    {
+        LinkToPreviousPageFormat = "上一页",
+        LinkToNextPageFormat = "下一页",
+        DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+        DisplayLinkToLastPage = PagedListDisplayMode.Always,
+        DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+        DisplayLinkToNextPage = PagedListDisplayMode.Always,
+        MaximumPageNumbersToDisplay = 5,
+        LinkToFirstPageFormat = "首页",
+        LinkToLastPageFormat = "最后一页",
+        PageCountAndCurrentLocationFormat = "第 {0}页 共 {1}页"
+    })
+                    </ul>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+@section FootScripts {
+    <script type="text/javascript" src="~/plugins/iCheck/icheck.js"></script>
+    <script type="text/javascript" src="~/Resource/plugins/bootstrap-switch/js/bootstrap-switch.js"></script>
+    <script type="text/javascript" src="~/Resource/plugins/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="~/Resource/plugins/bootbox.min.js"></script>
+    <script type="text/javascript" src="~/Resource/js/SkyWeb.js"></script>
+
+}
+
+

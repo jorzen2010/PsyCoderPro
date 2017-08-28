@@ -1,0 +1,7 @@
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Release\PsyCoderCommon.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Release\PsyCoderCommon.pdb
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Release\ChnCharInfo.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\obj\Release\PsyCoderCommon.csprojResolveAssemblyReference.cache
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\obj\Release\PsyCoderCommon.dll
+D:\MyPro\2017\PsyCoderProVIP\PsyCoderCommon\obj\Release\PsyCoderCommon.pdb
