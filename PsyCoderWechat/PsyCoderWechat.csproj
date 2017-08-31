@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WechatController.cs" />
+    <Compile Include="Controllers\WechatMaterialController.cs" />
     <Compile Include="Controllers\WechatMenuController.cs" />
     <Compile Include="Controllers\WechatMessageController.cs" />
     <Compile Include="Controllers\WechatPayController.cs" />
@@ -1382,7 +1383,8 @@
     <Content Include="plugins\UEditor\ueditor.config.js" />
     <Content Include="plugins\UEditor\ueditor.parse.js" />
     <Content Include="plugins\UEditor\ueditor.parse.min.js" />
-    <Content Include="Resource\WechatResource\menuinfo.txt" />
+    <Content Include="Resource\Image\avatar.png" />
+    <Content Include="Resource\Image\oldbg.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="cert\apiclient_cert.p12" />
@@ -1492,6 +1494,10 @@
     <Content Include="Views\WechatMenu\CreateMenu.cshtml" />
     <Content Include="Views\WechatMessage\TempletMessage.cshtml" />
     <Content Include="Views\WechatMessage\SendTempletMessage.cshtml" />
+    <Content Include="Views\WechatMaterial\MaterialList.cshtml" />
+    <Content Include="Views\WechatMaterial\TempMaterialList.cshtml" />
+    <Content Include="Views\WechatMaterial\AddMaterial.cshtml" />
+    <Content Include="Views\WechatMaterial\UploadMaterial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1541,6 +1547,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\libcurl.NET.x64.1.4.1.0\build\libcurl.NET.x64.targets" Condition="Exists('..\packages\libcurl.NET.x64.1.4.1.0\build\libcurl.NET.x64.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

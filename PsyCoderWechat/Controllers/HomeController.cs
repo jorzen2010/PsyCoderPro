@@ -16,6 +16,21 @@ namespace PsyCoderWechat.Controllers
     {
         public ActionResult demo()
         {
+            string str = @"开始时间:2016-1-1" + "\r\n"
+                                                         + "结束时间:2017-1-1" + "\r\n"
+                                                        + "沙尘天气等级:2" + "\r\n"
+                                                        + "PM10日均浓度最大值:2ug/m3" + "\r\n"
+                                                         + "影响范围:济南，青岛";
+
+            string oldpath = @"/Resource/Image/78041949.png";
+            string avatarpath=@"/Resource/Image/avatar.png";
+          //  string newpath = @"/Resource/Image/"+CommonTools.getRandomNumber(10000,99999999)+".png";
+            string imagepath = ImageTools.composeImage(oldpath, avatarpath, @"/Resource/Image/" + CommonTools.getRandomNumber(10000, 99999999) + ".png");
+            string textimagepath = ImageTools.composeText(oldpath, "我是贺苏\r\n邀请你来参加第二节", @"/Resource/Image/" + CommonTools.getRandomNumber(10000, 99999999) + ".png");
+            string texttoimagepath = ImageTools.SaveTextToImage(str);
+            ViewBag.imagepath = imagepath;
+            ViewBag.textimagepath = textimagepath;
+            ViewBag.texttoimagepath = texttoimagepath;
             return View();
         }
         public ActionResult Index()

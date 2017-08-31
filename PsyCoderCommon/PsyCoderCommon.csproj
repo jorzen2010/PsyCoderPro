@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurlFileTools.cs" />
+    <Compile Include="ImageTools.cs" />
     <Compile Include="IOHelper.cs" />
     <Compile Include="TimeHelp.cs" />
     <Compile Include="CommonDal.cs" />
