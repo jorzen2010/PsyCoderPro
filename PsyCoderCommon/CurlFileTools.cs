@@ -20,6 +20,7 @@ namespace PsyCoderCommon
         /// <param name="fs"></param>
         /// <param name="encoding"></param>
         /// <returns></returns>
+
         public static string HttpRequestPost(string url, string typeName, string fileName, Stream fs, string encoding = "UTF-8")
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
