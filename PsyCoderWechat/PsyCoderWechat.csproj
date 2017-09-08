@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TempController.cs" />
     <Compile Include="Controllers\WechatController.cs" />
     <Compile Include="Controllers\WechatMaterialController.cs" />
     <Compile Include="Controllers\WechatMenuController.cs" />
@@ -1383,6 +1384,7 @@
     <Content Include="plugins\UEditor\ueditor.config.js" />
     <Content Include="plugins\UEditor\ueditor.parse.js" />
     <Content Include="plugins\UEditor\ueditor.parse.min.js" />
+    <Content Include="Resource\Css\WechatStyle.css" />
     <Content Include="Resource\Image\avatar.png" />
     <Content Include="Resource\Image\oldbg.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1498,6 +1500,8 @@
     <Content Include="Views\WechatMaterial\TempMaterialList.cshtml" />
     <Content Include="Views\WechatMaterial\AddMaterial.cshtml" />
     <Content Include="Views\WechatMaterial\UploadMaterial.cshtml" />
+    <Content Include="Views\Temp\Index.cshtml" />
+    <Content Include="Views\Temp\Discover.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

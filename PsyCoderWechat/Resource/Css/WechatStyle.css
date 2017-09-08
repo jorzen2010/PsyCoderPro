@@ -1,0 +1,142 @@
+﻿/*!
+ * 背景色：#EEEEEE 分割线：#E5E5E5 深色分割线：#CCCCCC  字体颜色 灰色：999999 深灰色：666666 深黑色 333333
+ */
+body {
+    background-color: #EEEEEE;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+
+/**
+  *放置input的div盒子
+  *1.此处应我的项目需要，加了些特别的设置，如字体、背景色等，按需添加；
+  *2.内层input不加边框，看起来效果会自然一点，所以外层div设置了边框和圆角
+*/
+.box{
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/**
+  *label标签样式 放在.box下，不至于影响其他的label
+  *采取绝对定位，位置根据需求确定
+*/
+.box label{
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    margin-left: -8%;
+    color: #B2B2B2;
+    top: 4.8rem;
+    font-weight: normal;
+}
+
+
+
+/*!
+ * 个人中心
+ */
+
+
+.header {
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: solid 1px #E5E5E5;
+    text-align: center;
+    height: 60px;
+}
+
+    .header h1 {
+        font-size: 20px;
+        color: #333333;
+    }
+
+
+.uc-info {
+    background-color: #ffffff;
+    height: 80px;
+    padding: 10px;
+}
+
+    .uc-info img {
+        height: 60px;
+        width: 60px;
+        float: left;
+    }
+
+    .uc-info p {
+        padding: 10px 0px 0px 15px;
+        height: 25px;
+        float: left;
+    }
+
+    .uc-info a {
+        margin: 15px 15px 0px 0px;
+        float: right;
+    }
+
+.uc-op-list {
+    margin: 10px 0px;
+    padding: 0px;
+}
+
+    .uc-op-list li {
+        padding-left: 15px;
+        font-size: 14px;
+        border-bottom: solid 1px #EEEEEE;
+        line-height: 45px;
+        height: 45px;
+        background-color: #ffffff;
+    }
+
+        .uc-op-list li a {
+            display: block;
+        }
+
+
+/*!
+ * 发现页面
+ */
+
+
+.search {background: #ffffff;
+     height:60px;
+     
+}
+.search form {
+  margin-top:10px;
+  padding:0px 10px;
+}
+.search input, .search button {
+  border: 1px solid #eeeeee;
+  outline: none;
+  background: #E5E5E5;
+}
+.search input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+.search button {
+      margin-top:10px;
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.search button:before {
+  margin-top:10px;
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #cccccc;
+}
