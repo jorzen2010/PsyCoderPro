@@ -19,3 +19,10 @@ D:\MyPro\2017\PsyCoderPro\PsyCoderCommon\bin\Debug\Microsoft.ApplicationBlocks.D
 D:\MyPro\2017\PsyCoderPro\PsyCoderCommon\obj\Debug\PsyCoderCommon.csprojResolveAssemblyReference.cache
 D:\MyPro\2017\PsyCoderPro\PsyCoderCommon\obj\Debug\PsyCoderCommon.dll
 D:\MyPro\2017\PsyCoderPro\PsyCoderCommon\obj\Debug\PsyCoderCommon.pdb
+E:\2017\PsyCoderPro\PsyCoderCommon\bin\Debug\PsyCoderCommon.dll
+E:\2017\PsyCoderPro\PsyCoderCommon\bin\Debug\PsyCoderCommon.pdb
+E:\2017\PsyCoderPro\PsyCoderCommon\bin\Debug\ChnCharInfo.dll
+E:\2017\PsyCoderPro\PsyCoderCommon\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+E:\2017\PsyCoderPro\PsyCoderCommon\obj\Debug\PsyCoderCommon.csprojResolveAssemblyReference.cache
+E:\2017\PsyCoderPro\PsyCoderCommon\obj\Debug\PsyCoderCommon.dll
+E:\2017\PsyCoderPro\PsyCoderCommon\obj\Debug\PsyCoderCommon.pdb
