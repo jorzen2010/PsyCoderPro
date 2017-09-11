@@ -117,23 +117,58 @@ h1 {
 
 .banner {
     margin-top:60px;
-    width:100%;
     height:150px;
     background-color:#ffd800;
 }
 
 
-.pro_list {
+
+.prolist {
+    margin:5px 0px;
+    padding:10px 0px ;
+    background-color:#ffffff;
+    overflow:hidden;
+
+}
+.prolist .prolisttitle {
     width:100%;
-    background-color:#333333;
+    height:30px;
+    color:#999999;
+
+}
+ .prolist   .prolisttitle h3 {
+     width:100%;
+         margin:0px 0px;
+        padding-left:10px;
+        line-height:30px;
+        font-size:1.2em;
+        float:left;
+    }
+
+  .prolist   .prolisttitle h3 a {
+         display:block;
+    }
+.proimg {
+    width:50%;
+    float:left;
 }
 
+.proimg img {
+    width:100%;
+    height:120px; 
+    padding:4px 2px 0px 2px;
+    border-radius:8px;
 
-.pro_list .proimg img {
-    margin:0px 0px 0px 0px;
-    margin:5px 2px 2px 2px ;
-    border-radius:5px;
-    width:50%;
-    height:150px;
+}
+
+.proimg1 {
+    width:100%;
+}
+
+.proimg1 img {
+    width:100%;
+    height:120px; 
+    padding:4px 2px 0px 2px;
+    border-radius:8px;
 
 }
