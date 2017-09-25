@@ -1394,6 +1394,29 @@
     <Content Include="Resource\ionicons-2.0.1\css\ionicons.css" />
     <Content Include="Resource\ionicons-2.0.1\css\ionicons.min.css" />
     <Content Include="Resource\ionicons-2.0.1\fonts\ionicons.svg" />
+    <Content Include="Resource\jplayer\css\reset.css" />
+    <Content Include="Resource\jplayer\css\style.css" />
+    <Content Include="Resource\jplayer\img\338F8MX.png" />
+    <Content Include="Resource\jplayer\img\3iirf2f.png" />
+    <Content Include="Resource\jplayer\img\AQAxRxS.png" />
+    <Content Include="Resource\jplayer\img\bfzn_005.png" />
+    <Content Include="Resource\jplayer\img\bfzn_006.png" />
+    <Content Include="Resource\jplayer\img\bfzn_007.png" />
+    <Content Include="Resource\jplayer\img\bg.jpeg" />
+    <Content Include="Resource\jplayer\img\E09T8tf.png" />
+    <Content Include="Resource\jplayer\img\lIhwduj.png" />
+    <Content Include="Resource\jplayer\img\LIqj0nr.png" />
+    <Content Include="Resource\jplayer\img\Mb6Nzj5.png" />
+    <Content Include="Resource\jplayer\img\PGIC6ME.png" />
+    <Content Include="Resource\jplayer\img\qqdoddi.png" />
+    <Content Include="Resource\jplayer\img\tsqwz1N.jpg" />
+    <Content Include="Resource\jplayer\img\V5i67V2.png" />
+    <Content Include="Resource\jplayer\img\xlBv5aR.png" />
+    <Content Include="Resource\jplayer\js\index.js" />
+    <Content Include="Resource\jplayer\js\jplayer.js" />
+    <Content Include="Resource\jplayer\js\jquery-1.js" />
+    <Content Include="Resource\jplayer\js\jquery.js" />
+    <Content Include="Resource\jplayer\js\jquery_002.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="cert\apiclient_cert.p12" />
@@ -1545,6 +1568,7 @@
     <Content Include="Views\WechatMaterial\UploadMaterial.cshtml" />
     <Content Include="Views\Temp\Index.cshtml" />
     <Content Include="Views\Temp\Discover.cshtml" />
+    <Content Include="Views\Temp\ProList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,5 +18,10 @@ namespace PsyCoderWechat.Controllers
         {
             return View();
         }
+
+        public ActionResult Prolist()
+        {
+            return View();
+        }
 	}
 }

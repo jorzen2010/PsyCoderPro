@@ -175,3 +175,12 @@ h1 {
     border-radius:8px;
 
 }
+
+/*!
+ * 播放页面
+ */
+
+.player {
+    background-color:#000000;
+    width:100%;
+}
