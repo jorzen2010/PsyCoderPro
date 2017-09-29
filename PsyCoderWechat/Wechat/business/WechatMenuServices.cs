@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using System.IO;
-using PsyCoderCommon;
 
-namespace PsyCoderWechat.WechatServices
+
+namespace Wechat
 {
     public class WechatMenuServices
     {
@@ -15,7 +15,7 @@ namespace PsyCoderWechat.WechatServices
             string userAgent = System.Web.HttpContext.Current.Request.UserAgent;
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/menu/get?access_token={0}", access_token);
 
-            HttpWebResponse res = HttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
+            HttpWebResponse res = WechatHttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
             Stream stream = res.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
             string result = sr.ReadToEnd();
@@ -28,7 +28,7 @@ namespace PsyCoderWechat.WechatServices
         {
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/menu/create?access_token={0}", access_token);
 
-            string result = HttpWebResponseUtility.PostJsonData(url, postdata);
+            string result = WechatHttpWebResponseUtility.PostJsonData(url, postdata);
 
             return result;
 
@@ -39,7 +39,7 @@ namespace PsyCoderWechat.WechatServices
             string userAgent = System.Web.HttpContext.Current.Request.UserAgent;
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/menu/delete?access_token={0}", access_token);
 
-            HttpWebResponse res = HttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
+            HttpWebResponse res = WechatHttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
             Stream stream = res.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
             string result = sr.ReadToEnd();

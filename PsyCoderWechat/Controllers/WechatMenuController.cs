@@ -6,8 +6,8 @@ using System.Web.Mvc;
 using System.Text;
 using Newtonsoft.Json;
 using PsyCoderCommon;
-using PsyCoderWechat.WechatServices;
-using PsyCoderEntity.WechatEntity;
+using Wechat;
+
 
 namespace PsyCoderWechat.Controllers
 {

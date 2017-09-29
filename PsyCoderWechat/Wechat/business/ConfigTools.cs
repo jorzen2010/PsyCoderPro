@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using System.Configuration;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-using PsyCoderCommon;
-using PsyCoderEntity.WechatEntity;
 
-namespace PsyCoderWechat.WechatServices
+
+namespace Wechat
 {
     public class ConfigTools
     {

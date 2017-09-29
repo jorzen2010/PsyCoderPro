@@ -4,10 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using Newtonsoft.Json;
-using PsyCoderEntity.WechatEntity;
-using PsyCoderCommon;
 
-namespace PsyCoderWechat.WechatServices
+
+namespace Wechat
 {
     public class WechatApi
     {
@@ -17,9 +16,9 @@ namespace PsyCoderWechat.WechatServices
 
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang=zh_CN", access_token,openid);
 
-            HttpWebResponse response = HttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
+            HttpWebResponse response = WechatHttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
 
-            string result = HttpWebResponseUtility.HttpResponseToString(response);
+            string result = WechatHttpWebResponseUtility.HttpResponseToString(response);
             userinfo = JsonConvert.DeserializeObject<WechatUserInfo>(result);
 
             return userinfo;

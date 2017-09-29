@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using System.Configuration;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-using PsyCoderCommon;
-using PsyCoderEntity.WechatEntity;
 
-namespace PsyCoderWechat.WechatServices
+
+namespace Wechat
 {
     public class AccessTokenService
     {
-
+        //获取accesstoken
         public static string GetAccessToken()
         {
 
@@ -33,12 +31,14 @@ namespace PsyCoderWechat.WechatServices
             }
             return access_token;
         }
+
+        //刷新accesstoken
         public static string  RefrenshToken(string appid, string appsecret)
         {
             string userAgent = System.Web.HttpContext.Current.Request.UserAgent;
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}", appid, appsecret);
 
-            HttpWebResponse res = HttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
+            HttpWebResponse res = WechatHttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
             Stream stream = res.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
             string result = sr.ReadToEnd();
@@ -52,29 +52,16 @@ namespace PsyCoderWechat.WechatServices
                 WechatError err = new WechatError();
                 err = JsonConvert.DeserializeObject<WechatError>(result);
                 access_token = "appid或者appsecret错误，无法获取access_token 微信错误代码：" + err.errcode + "微信错误信息：" + err.errmsg;
-                LogHelper.Error(access_token);
+                WechatLogHelper.Error(access_token);
             }
             else
             {
-               // AccessTokenService.WriteToken(token.access_token, System.DateTime.Now.AddMinutes(115).ToString("yyyy-MM-dd HH:mm:ss"));
-
                 ConfigTools.WriteKey("WechatAccessToken", access_token);
                 ConfigTools.WriteKey("WechatAccessTokenExpiredTime", System.DateTime.Now.AddMinutes(115).ToString("yyyy-MM-dd HH:mm:ss"));
 
             }
             return access_token;
         }
-
-        //public static void WriteToken(string token,string tokenExpiredTime)
-        //{
-        //    Configuration config = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~");
-        //    AppSettingsSection appsection = config.GetSection("appSettings") as AppSettingsSection;
-
-        //    appsection.Settings["WechatAccessToken"].Value = token;
-        //    appsection.Settings["WechatAccessTokenExpiredTime"].Value = tokenExpiredTime;
-        //    config.Save();
-        
-        //}
 
         public static WechatConfig GetWechatConfig()
         {

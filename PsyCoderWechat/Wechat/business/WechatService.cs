@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Text;
 using System.Xml;
-using PsyCoderCommon;
 using Newtonsoft.Json;
 using System.Configuration;
 
-namespace PsyCoderWechat.WechatServices
+namespace Wechat
 {
     public class WechatService
     {
@@ -29,7 +28,7 @@ namespace PsyCoderWechat.WechatServices
             Array.Sort(ArrTmp);
             string tmpStr = string.Join("", ArrTmp);
 
-            tmpStr = SkyEncrypt.SHA1(tmpStr);
+            tmpStr = WechatEncrypt.SHA1(tmpStr);
 
             tmpStr = tmpStr.ToLower();
 
@@ -86,7 +85,7 @@ namespace PsyCoderWechat.WechatServices
                 break;
                    
             }
-            result = HttpWebResponseUtility.PostJsonData(url, postdata);
+            result = WechatHttpWebResponseUtility.PostJsonData(url, postdata);
             return result;
         }
     }

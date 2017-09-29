@@ -83,11 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setting.cs" />
     <Compile Include="SysUser.cs" />
-    <Compile Include="WechatEntity\WechatAccessToken.cs" />
-    <Compile Include="WechatEntity\WechatJsModels.cs" />
-    <Compile Include="WechatEntity\WechatMessage.cs" />
-    <Compile Include="WechatEntity\WechatMessages.cs" />
-    <Compile Include="WechatEntity\WechatModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,17 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using System.IO;
-using PsyCoderCommon;
 
-namespace PsyCoderWechat.WechatServices
+
+namespace Wechat
 {
     public class WechatMessageServices
     {
         public static string SendTempletMessge(string access_token, string postdata)
         {
-            string url = string.Format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}", access_token);          
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}", access_token);
 
-            string result = HttpWebResponseUtility.PostJsonData(url, postdata);
+            string result = WechatHttpWebResponseUtility.PostJsonData(url, postdata);
 
             return result;
 

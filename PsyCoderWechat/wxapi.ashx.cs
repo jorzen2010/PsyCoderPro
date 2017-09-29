@@ -5,8 +5,7 @@ using System.Web;
 using System.IO;
 using System.Text;
 using PsyCoderCommon;
-using PsyCoderWechat.WechatServices;
-
+using Wechat;
 
 namespace PsyCoderWechat
 {

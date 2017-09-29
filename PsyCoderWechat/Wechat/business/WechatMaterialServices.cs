@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Net;
 using System.IO;
-using PsyCoderCommon;
-namespace PsyCoderWechat.WechatServices
+
+
+namespace Wechat
 {
     public class WechatMaterialServices
     {
@@ -13,7 +14,7 @@ namespace PsyCoderWechat.WechatServices
         {
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token={0}", access_token);
 
-            string result = HttpWebResponseUtility.PostJsonData(url, postdata);
+            string result = WechatHttpWebResponseUtility.PostJsonData(url, postdata);
 
             return result;
 
@@ -39,7 +40,7 @@ namespace PsyCoderWechat.WechatServices
         public static string UploadTempMedia(string access_token, string type, string fileName, Stream inputStream)
         {
             var url = string.Format("http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={0}&type={1}", access_token, type.ToString());
-            var result = CurlFileTools.HttpRequestPost(url, "media", fileName, inputStream);
+            var result = WechatCurlFileTools.HttpRequestPost(url, "media", fileName, inputStream);
             inputStream.Close();
             inputStream.Dispose();
             return result;
@@ -58,7 +59,7 @@ namespace PsyCoderWechat.WechatServices
         {
             var url = string.Format("http://file.api.weixin.qq.com/cgi-bin/media/get?access_token={0}&media_id={1}", access_token, media_id);
             FileStream fs = new FileStream(savePath, FileMode.Create);
-            CurlFileTools.Download(url, fs);
+            WechatCurlFileTools.Download(url, fs);
             fs.Close();
             fs.Dispose();
         }
@@ -67,7 +68,7 @@ namespace PsyCoderWechat.WechatServices
         public static string UploadForeverMedia(string access_token, string type, string fileName, Stream inputStream)
         {
             var url = string.Format("https://api.weixin.qq.com/cgi-bin/material/add_material?access_token={0}&type={1}", access_token, type.ToString());
-            var result = CurlFileTools.HttpRequestPost(url, "media", fileName, inputStream);
+            var result = WechatCurlFileTools.HttpRequestPost(url, "media", fileName, inputStream);
             inputStream.Close();
             inputStream.Dispose();
             return result;
@@ -77,7 +78,7 @@ namespace PsyCoderWechat.WechatServices
         {
             var url = string.Format("http://file.api.weixin.qq.com/cgi-bin/media/get?access_token={0}&media_id={1}", access_token, media_id);
             FileStream fs = new FileStream(savePath, FileMode.Create);
-            CurlFileTools.Download(url, fs);
+            WechatCurlFileTools.Download(url, fs);
             fs.Close();
             fs.Dispose();
         }

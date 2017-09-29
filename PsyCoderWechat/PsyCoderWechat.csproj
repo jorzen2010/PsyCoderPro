@@ -46,6 +46,10 @@
       <HintPath>..\packages\LitJson.0.7.0\lib\LitJson.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI">
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
     </Reference>
@@ -63,7 +67,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.Protocols" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,10 +119,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ThoughtWorks.QRCode">
       <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
@@ -222,14 +224,23 @@
     <Compile Include="WechatPay\lib\ModelForOrder.cs" />
     <Compile Include="WechatPay\lib\Notify.cs" />
     <Compile Include="WechatPay\lib\WxPayApi.cs" />
-    <Compile Include="WechatServices\AccessTokenService.cs" />
-    <Compile Include="WechatServices\ConfigTools.cs" />
-    <Compile Include="WechatServices\WechatApi.cs" />
-    <Compile Include="WechatServices\WechatJsServices.cs" />
-    <Compile Include="WechatServices\WechatMaterialServices.cs" />
-    <Compile Include="WechatServices\WechatMenuServices.cs" />
-    <Compile Include="WechatServices\WechatMessageServices.cs" />
-    <Compile Include="WechatServices\WechatService.cs" />
+    <Compile Include="Wechat\business\AccessTokenService.cs" />
+    <Compile Include="Wechat\business\ConfigTools.cs" />
+    <Compile Include="Wechat\business\WechatApi.cs" />
+    <Compile Include="Wechat\business\WechatJsServices.cs" />
+    <Compile Include="Wechat\business\WechatMaterialServices.cs" />
+    <Compile Include="Wechat\business\WechatMenuServices.cs" />
+    <Compile Include="Wechat\business\WechatMessageServices.cs" />
+    <Compile Include="Wechat\business\WechatService.cs" />
+    <Compile Include="Wechat\lib\AccessToken.cs" />
+    <Compile Include="Wechat\lib\JsModels.cs" />
+    <Compile Include="Wechat\lib\Message.cs" />
+    <Compile Include="Wechat\lib\ResponseMessages.cs" />
+    <Compile Include="Wechat\lib\WechatModels.cs" />
+    <Compile Include="Wechat\Tools\WechatCurlFileTools.cs" />
+    <Compile Include="Wechat\Tools\WechatEncrypt.cs" />
+    <Compile Include="Wechat\Tools\WechatHttpWebResponseUtility.cs" />
+    <Compile Include="Wechat\Tools\WechatLogHelper.cs" />
     <Compile Include="wxapi.ashx.cs">
       <DependentUpon>wxapi.ashx</DependentUpon>
     </Compile>

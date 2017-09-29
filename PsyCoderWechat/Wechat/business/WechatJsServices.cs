@@ -6,10 +6,9 @@ using Newtonsoft.Json;
 using System.Net;
 using System.IO;
 using System.Configuration;
-using PsyCoderEntity.WechatEntity;
-using PsyCoderCommon;
 
-namespace PsyCoderWechat.WechatServices
+
+namespace Wechat
 {
     public class WechatJsServices
     {
@@ -37,19 +36,19 @@ namespace PsyCoderWechat.WechatServices
 
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={0}&type=jsapi", access_token);
 
-            HttpWebResponse response = HttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
+            HttpWebResponse response = WechatHttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
 
             //Stream stream = response.GetResponseStream();
             //StreamReader sr = new StreamReader(stream);
             //string result = sr.ReadToEnd();
-            string result = HttpWebResponseUtility.HttpResponseToString(response);
+            string result = WechatHttpWebResponseUtility.HttpResponseToString(response);
             WechatJsTicket ticket = JsonConvert.DeserializeObject<WechatJsTicket>(result);
             if (string.IsNullOrEmpty(ticket.ticket))
             {
                 WechatError err = new WechatError();
                 err = JsonConvert.DeserializeObject<WechatError>(result);
                 string error = "appid或者appsecret错误，无法获取access_token 微信错误代码：" + err.errcode + "微信错误信息：" + err.errmsg;
-                LogHelper.Error(error);
+                WechatLogHelper.Error(error);
             }
             else
             { 
@@ -73,7 +72,7 @@ namespace PsyCoderWechat.WechatServices
 
             string string1 = string.Format("jsapi_ticket={0}&noncestr={1}&timestamp={2}&url={3}", jsapi_ticket, nonceStr, timestamp, currentUrl);
       //      string string1 = "jsapi_ticket=" + jsapi_ticket +"&noncestr=" + "zhaozhengo" +"&timestamp=" + "1414587487" +"&url=" + currentUrl;
-            return SkyEncrypt.SHA1(string1);
+            return WechatEncrypt.SHA1(string1);
 
         }
 
@@ -105,8 +104,8 @@ namespace PsyCoderWechat.WechatServices
             WechatConfig wechatconfig = AccessTokenService.GetWechatConfig();
             WebchatJsUserinfo userinfo = new WebchatJsUserinfo();
             string url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + wechatconfig.Appid + "&secret=" + wechatconfig.AppSecret + "&code=" + CODE + "&grant_type=authorization_code";
-       
-            HttpWebResponse response = HttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
+
+            HttpWebResponse response = WechatHttpWebResponseUtility.CreateGetHttpResponse(url, null, userAgent, null);
 
             Stream stream = response.GetResponseStream();
             StreamReader sr = new StreamReader(stream);
@@ -117,7 +116,7 @@ namespace PsyCoderWechat.WechatServices
 
             string url2 = "https://api.weixin.qq.com/sns/userinfo?access_token=" + token.access_token + "&openid=" + token.openid + "&lang=zh_CN";
 
-            HttpWebResponse res = HttpWebResponseUtility.CreateGetHttpResponse(url2, null, userAgent, null);
+            HttpWebResponse res = WechatHttpWebResponseUtility.CreateGetHttpResponse(url2, null, userAgent, null);
             Stream stream2 = res.GetResponseStream();
             StreamReader sr2 = new StreamReader(stream2);
             string result2 = sr2.ReadToEnd();
